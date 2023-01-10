@@ -3,7 +3,7 @@ import Head from 'next/head';
 const siteUrl = process.env.NEXT_PUBLIC_WEBSITE_URL;
 const name = 'exsaverse';
 const twitterHandle = '@evetixx';
-const defaultOgImage = `${siteUrl}/exsaverse.jpg`;
+const defaultOgImage = `exsaverse-demo.netlify.app/exsaverse.jpg`;
 
 export const Meta = ({ title, description, prefix = name, ogImage = defaultOgImage }) => {
   const titleText = [prefix, title].filter(Boolean).join(' | ');

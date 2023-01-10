@@ -75,8 +75,8 @@ export const Home = () => {
     <div className={styles.home}>
       <Meta
         title="Community Build on Solana"
-        description="Design portfolio of Hamish Williams — a product designer working on web & mobile
-          apps with a focus on motion, experience design, and accessibility."
+        description="At exsaverse, we believe in building a strong and inclusive community where everyone
+      can contribute their unique skills and knowledge."
       />
       <Intro
         id="intro"
