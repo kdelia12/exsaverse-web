@@ -21,13 +21,13 @@ const ProfileText = ({ visible, titleId }) => (
       <DecoderText text="Hi there" start={visible} delay={500} />
     </Heading>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-      Exaverse is a community of individuals who are passionate about the development,
+      exsaverse is a community of individuals who are passionate about the development,
       adoption, and use of cryptocurrency and decentralized finance platforms and
       technologies. Our focus is on the various aspects of DeFi such as yield farming,
       lending, borrowing, and insurance.
     </Text>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-      At Exaverse, we believe in building a strong and inclusive community where everyone
+      At exsaverse, we believe in building a strong and inclusive community where everyone
       can contribute their unique skills and knowledge. Whether you're a beginner or an
       experienced professional, you're welcome to join us on our journey towards a
       decentralized financial future.
