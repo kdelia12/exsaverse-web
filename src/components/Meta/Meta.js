@@ -3,7 +3,7 @@ import Head from 'next/head';
 const siteUrl = process.env.NEXT_PUBLIC_WEBSITE_URL;
 const name = 'exsaverse';
 const twitterHandle = '@evetixx';
-const defaultOgImage = `${siteUrl}/exsaverse.jpeg`;
+const defaultOgImage = `${siteUrl}/exsaverse.jpg`;
 
 export const Meta = ({ title, description, prefix = name, ogImage = defaultOgImage }) => {
   const titleText = [prefix, title].filter(Boolean).join(' | ');
@@ -16,7 +16,7 @@ export const Meta = ({ title, description, prefix = name, ogImage = defaultOgIma
 
       <meta property="og:image" content={ogImage} />
       <meta property="og:image:alt" content="Banner for the site" />
-      <meta property="og:image:type" content="image/jpeg" />
+      <meta property="og:image:type" content="image/jpg" />
       <meta property="og:image:width" content="1280" />
       <meta property="og:image:height" content="675" />
 
