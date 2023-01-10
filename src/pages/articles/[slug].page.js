@@ -1,4 +1,4 @@
-import fs from 'fs';
+import fs from 'fs-extra';
 import path from 'path';
 import { Post, postMarkdown } from 'layouts/Post';
 import { bundleMDX } from 'mdx-bundler';
@@ -24,11 +24,8 @@ export default function PostPage({ frontmatter, code, timecode, ogImage }) {
 }
 
 export const getStaticProps = async ({ params }) => {
-  const postFilePath = path.join(
-    path.join(process.cwd(), 'src/posts'),
-    `${params.slug}.mdx`
-  );
-  const source = fs.readFileSync(postFilePath, 'utf-8');
+  const postFilePath = path.join(POSTS_PATH, `${params.slug}.mdx`);
+  const source = await fs.readFile(postFilePath, 'utf-8');
 
   const { code, frontmatter, matter } = await bundleMDX({
     source,
