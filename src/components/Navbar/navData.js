@@ -20,7 +20,7 @@ export const navLinks = [
 export const socialLinks = [
   {
     label: 'Twitter',
-    url: 'https://twitter.com/evetixx',
+    url: 'https://twitter.com/exsaverse',
     icon: 'twitter',
   },
   {
