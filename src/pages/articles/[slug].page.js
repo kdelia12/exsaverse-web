@@ -24,7 +24,10 @@ export default function PostPage({ frontmatter, code, timecode, ogImage }) {
 }
 
 export const getStaticProps = async ({ params }) => {
-  const postFilePath = path.join(POSTS_PATH, `${params.slug}.mdx`);
+  const postFilePath = path.join(
+    path.join(process.cwd(), 'src/posts'),
+    `${params.slug}.mdx`
+  );
   const source = fs.readFileSync(postFilePath, 'utf-8');
 
   const { code, frontmatter, matter } = await bundleMDX({
