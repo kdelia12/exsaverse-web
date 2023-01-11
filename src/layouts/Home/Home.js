@@ -110,10 +110,10 @@ export const Home = () => {
         sectionRef={projectTwo}
         visible={visibleSections.includes(projectTwo.current)}
         index={2}
-        title="Good Project Sir"
-        description="Kontol"
-        buttonText="View website"
-        buttonLink="https://xnxx.com"
+        title="Whitelist Marketplace"
+        description="We use bot for whitelist transaction so everyone will feel safe and fast without waiting the midman to online! psst, we are the first to implement it!"
+        buttonText="Check this out!"
+        buttonLink="https://discord.gg/exsaverse"
         model={{
           type: 'phone',
           alt: 'App login screen',
