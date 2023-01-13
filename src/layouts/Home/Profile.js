@@ -2,6 +2,8 @@ import profileKatakana from 'assets/katakana-profile.svg?url';
 import profileImgLarge from 'assets/profile-large.jpg';
 import profileImgPlaceholder from 'assets/profile-placeholder.jpg';
 import profileImg from 'assets/profile.jpg';
+import profileImg2 from 'assets/profile2.jpg';
+import profileImg3 from 'assets/profile3.jpg';
 import { Button } from 'components/Button';
 import { DecoderText } from 'components/DecoderText';
 import { Divider } from 'components/Divider';
@@ -11,9 +13,12 @@ import { Link } from 'components/Link';
 import { Section } from 'components/Section';
 import { Text } from 'components/Text';
 import { Transition } from 'components/Transition';
-import { Fragment, useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { Fragment } from 'react';
 import { media } from 'utils/style';
 import styles from './Profile.module.css';
+import styles2 from './Intro.module.css';
 
 const ProfileText = ({ visible, titleId }) => (
   <Fragment>
@@ -36,8 +41,20 @@ const ProfileText = ({ visible, titleId }) => (
 );
 
 export const Profile = ({ id, visible, sectionRef }) => {
+  const ProfileImage = [profileImg, profileImg2, profileImg3];
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentProfileImage, setCurrentProfileImage] = useState(
+    ProfileImage[currentIndex]
+  );
   const [focused, setFocused] = useState(false);
   const titleId = `${id}-title`;
+
+  useEffect(() => {
+    setTimeout(() => {
+      setCurrentProfileImage(ProfileImage[currentIndex]);
+      setCurrentIndex((currentIndex + 1) % ProfileImage.length);
+    }, 5000);
+  }, [currentIndex]);
 
   return (
     <Section
@@ -78,24 +95,26 @@ export const Profile = ({ id, visible, sectionRef }) => {
                 </div>
               </div>
               <div className={styles.image}>
-                <Image
-                  reveal
-                  delay={100}
-                  placeholder={profileImgPlaceholder}
-                  srcSet={[profileImg, profileImgLarge]}
-                  sizes={`(max-width: ${media.mobile}px) 100vw, 480px`}
-                  alt="Me standing in front of the Torii on Miyajima, an island off the coast of Hiroshima in Japan"
-                />
-                <svg
-                  aria-hidden="true"
-                  width="135"
-                  height="765"
-                  viewBox="0 0 135 765"
-                  className={styles.svg}
-                  data-visible={visible}
-                >
-                  <use href={`${profileKatakana}#katakana-profile`} />
-                </svg>
+                <AnimatePresence>
+                  {ProfileImage.map(item => (
+                    <Transition
+                      unmount
+                      in={item === currentProfileImage}
+                      timeout={{ enter: 2000, exit: 0 }}
+                      key={item}
+                    >
+                      {(visible, status) => (
+                        <Image
+                          reveal
+                          delay={100}
+                          placeholder={profileImgPlaceholder}
+                          src={item}
+                          alt="Profile"
+                        />
+                      )}
+                    </Transition>
+                  ))}
+                </AnimatePresence>
               </div>
             </div>
           </div>

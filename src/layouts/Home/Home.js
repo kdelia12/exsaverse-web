@@ -111,7 +111,7 @@ export const Home = () => {
         visible={visibleSections.includes(projectTwo.current)}
         index={2}
         title="Whitelist Marketplace"
-        description="We use bot for whitelist transaction so everyone will feel safe and fast without waiting the midman to online! psst, we are the first to implement it!"
+        description="We use bot for whitelist transaction so everyone will feel safe and just wait until the middleman handle your orders! Funfact, this bot also auto list your listing! psst, we are the first to implement it! "
         buttonText="Check this out!"
         buttonLink="https://discord.gg/exsaverse"
         model={{
@@ -134,10 +134,10 @@ export const Home = () => {
         sectionRef={projectThree}
         visible={visibleSections.includes(projectThree.current)}
         index={3}
-        title="Botak Kontol"
-        description="Kerja Bagus"
+        title="Responsive Core Team"
+        description="Core team will always be there to help you! We will make sure you will get the best service from us!"
         buttonText="View more"
-        buttonLink="#"
+        buttonLink="/projects/slices"
         model={{
           type: 'laptop',
           alt: 'Annotating a biomedical image in the Slice app',
