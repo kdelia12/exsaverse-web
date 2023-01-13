@@ -125,3 +125,84 @@
     opacity: 1;
   }
 }
+@keyframes introTextReveal {
+  0% {
+    color: rgb(var(--rgbText) / 0);
+  }
+
+  50% {
+    color: rgb(var(--rgbText) / 0);
+  }
+
+  60% {
+    color: var(--colorTextTitle);
+  }
+
+  100% {
+    color: var(--colorTextTitle);
+  }
+}
+
+.word {
+  position: relative;
+  display: flex;
+  align-items: center;
+  line-height: 1;
+  animation-duration: 1.5s;
+  animation-delay: var(--delay);
+  animation-fill-mode: forwards;
+  animation-timing-function: var(--bezierFastoutSlowin);
+  color: rgb(var(--rgbText) / 0);
+  transition: opacity 0.5s ease var(--durationM);
+  isolation: isolate;
+  font-size: var(--fontSizeBodyXL);
+  padding-top: 10%;
+
+  &::after {
+    content: '';
+    background: rgb(var(--rgbAccent));
+    animation-duration: 1.5s;
+    animation-delay: var(--delay);
+    animation-fill-mode: forwards;
+    animation-timing-function: var(--bezierFastoutSlowin);
+    transform-origin: left;
+    transform: scale3d(0, 1, 1);
+    position: absolute;
+    inset: 0 -0.02em 0 0;
+    z-index: var(--zIndex1);
+    will-change: transform;
+  }
+
+  &[data-plus='true']::before {
+    margin-right: 10px;
+    opacity: 0.4;
+  }
+
+  &[data-status='entering'] {
+    animation-name: introTextReveal;
+
+    @media (--mediaUseMotion) {
+      &::after:global {
+        animation-name: reveal;
+      }
+    }
+  }
+
+  &[data-status='entered'] {
+    color: var(--colorTextTitle);
+
+    &::after {
+      opacity: 1;
+      transform: scale3d(0, 0, 1);
+      transform-origin: right;
+    }
+  }
+
+  &[data-status='exiting'] {
+    color: var(--colorTextTitle);
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    z-index: var(--zIndex0);
+  }
+}

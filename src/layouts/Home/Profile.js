@@ -12,13 +12,17 @@ import { Image } from 'components/Image';
 import { Link } from 'components/Link';
 import { Section } from 'components/Section';
 import { Text } from 'components/Text';
+import { tokens } from 'components/ThemeProvider/theme';
 import { Transition } from 'components/Transition';
 import { AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import { useTheme } from 'components/ThemeProvider';
 import { Fragment } from 'react';
 import { media } from 'utils/style';
 import styles from './Profile.module.css';
-import styles2 from './Intro.module.css';
+import { Icon } from 'components/Icon';
+import { cssProps } from 'utils/style';
+import { useInterval, usePrevious } from 'hooks';
 
 const ProfileText = ({ visible, titleId }) => (
   <Fragment>
@@ -41,21 +45,60 @@ const ProfileText = ({ visible, titleId }) => (
 );
 
 export const Profile = ({ id, visible, sectionRef }) => {
+  const theme = useTheme();
   const ProfileImage = [profileImg, profileImg2, profileImg3];
+  const pictext = ['Profile 1', 'Profile 2', 'Profile 3'];
   const [currentIndex, setCurrentIndex] = useState(0);
+  const prevTheme = usePrevious(theme);
   const [currentProfileImage, setCurrentProfileImage] = useState(
     ProfileImage[currentIndex]
   );
+  const [currentprofiletext, setcurrentprofiletextindex] = useState(
+    pictext[currentIndex]
+  );
   const [focused, setFocused] = useState(false);
   const titleId = `${id}-title`;
+  const socialLinks = [
+    {
+      label: 'Twitter',
+      url: 'https://twitter.com/exsaverse',
+      icon: 'twitter',
+    },
+    {
+      label: 'Discord',
+      url: 'https://discord.gg/exsaverse',
+      icon: 'twitter',
+    },
+    {
+      label: 'Github',
+      url: 'https://github.com/kdelia12',
+      icon: 'twitter',
+    },
+  ];
+  const [currentsociallink, setcurrentsociallink] = useState(socialLinks[currentIndex]);
 
   useEffect(() => {
     setTimeout(() => {
       setCurrentProfileImage(ProfileImage[currentIndex]);
+      setcurrentprofiletextindex(pictext[currentIndex]);
+      setcurrentsociallink(socialLinks[currentIndex]);
+      // setcurrentprofiletext(pictext[currentIndex]);
       setCurrentIndex((currentIndex + 1) % ProfileImage.length);
     }, 5000);
   }, [currentIndex]);
-
+  // useInterval(
+  //   () => {
+  //     const index = (currentprofiletextindex + 1) % pictext.length;
+  //     setcurrentprofiletextindex(index);
+  //   },
+  //   5000,
+  //   theme.themeId
+  // );
+  useEffect(() => {
+    if (prevTheme && prevTheme.themeId !== theme.themeId) {
+      setcurrentprofiletextindex(0);
+    }
+  }, [theme.themeId, prevTheme]);
   return (
     <Section
       className={styles.profile}
@@ -91,7 +134,7 @@ export const Profile = ({ id, visible, sectionRef }) => {
                   collapseDelay={1000}
                 />
                 <div className={styles.tagText} data-visible={visible}>
-                  About Us
+                  Our Partnership
                 </div>
               </div>
               <div className={styles.image}>
@@ -107,10 +150,60 @@ export const Profile = ({ id, visible, sectionRef }) => {
                         <Image
                           reveal
                           delay={100}
+                          aria-hidden
+                          className={styles.word}
+                          data-plus={true}
+                          data-status={status}
                           placeholder={profileImgPlaceholder}
                           src={item}
                           alt="Profile"
                         />
+                      )}
+                    </Transition>
+                  ))}
+                </AnimatePresence>
+              </div>
+              <div className={styles.row} component="span">
+                <AnimatePresence>
+                  {pictext.map(item => (
+                    <Transition
+                      unmount
+                      in={item === currentprofiletext}
+                      timeout={{ enter: 3000, exit: 2000 }}
+                      key={item}
+                    >
+                      {(visible, status) => (
+                        <span
+                          aria-hidden
+                          className={styles.word}
+                          data-plus={true}
+                          data-status={status}
+                          style={cssProps({ delay: tokens.base.durationL })}
+                        >
+                          {item}
+                          {/* {currentsociallink(({ label, url, icon }) => (
+                            <Transition
+                              unmount
+                              in={item === currentsociallink}
+                              timeout={{ enter: 3000, exit: 2000 }}
+                              key={item}
+                            >
+                              {(visible, status) => (
+                                <a
+                                  key={label}
+                                  data-navbar-item={desktop || undefined}
+                                  className={styles.navIconLink}
+                                  aria-label={label}
+                                  href={url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
+                                  <Icon className={styles.navIcon} icon={icon} />
+                                </a>
+                              )}
+                            </Transition>
+                          ))} */}
+                        </span>
                       )}
                     </Transition>
                   ))}

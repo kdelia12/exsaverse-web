@@ -10,6 +10,8 @@ import sliceTexture from 'assets/slice-app.jpg';
 import sprTextureLarge from 'assets/spr-lesson-builder-dark-large.jpg';
 import sprTexturePlaceholder from 'assets/spr-lesson-builder-dark-placeholder.jpg';
 import sprTexture from 'assets/spr-lesson-builder-dark.jpg';
+import coremeet from 'assets/coremeet.jpg';
+import coremeetlarge from 'assets/coremeet.jpg';
 import { Footer } from 'components/Footer';
 import { Meta } from 'components/Meta';
 import { Intro } from 'layouts/Home/Intro';
@@ -33,6 +35,7 @@ export const Home = () => {
   const projectOne = useRef();
   const projectTwo = useRef();
   const projectThree = useRef();
+  const projectFour = useRef();
   const details = useRef();
 
   useEffect(() => {
@@ -137,13 +140,33 @@ export const Home = () => {
         title="Responsive Core Team"
         description="Core team will always be there to help you! We will make sure you will get the best service from us!"
         buttonText="View more"
-        buttonLink="/projects/slices"
+        buttonLink="/about/coreteam"
         model={{
           type: 'laptop',
           alt: 'Annotating a biomedical image in the Slice app',
           textures: [
             {
-              srcSet: [sliceTexture, sliceTextureLarge],
+              srcSet: [coremeet, coremeetlarge],
+              placeholder: sliceTexturePlaceholder,
+            },
+          ],
+        }}
+      />
+      <ProjectSummary
+        id="project-4"
+        sectionRef={projectFour}
+        visible={visibleSections.includes(projectThree.current)}
+        index={4}
+        title="Experienced Alpha Hunters"
+        description="Core team will always be there to help you! We will make sure you will get the best service from us!"
+        buttonText="View more"
+        buttonLink="/about/coreteam"
+        model={{
+          type: 'laptop',
+          alt: 'Annotating a biomedical image in the Slice app',
+          textures: [
+            {
+              srcSet: [coremeet, coremeetlarge],
               placeholder: sliceTexturePlaceholder,
             },
           ],

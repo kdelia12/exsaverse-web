@@ -8,18 +8,12 @@ import { Transition } from 'components/Transition';
 import { useParallax } from 'hooks';
 import { forwardRef, useRef } from 'react';
 import { classes, cssProps, msToNum, numToMs } from 'utils/style';
+import { Icon } from 'components/Icon';
 import styles from './Project.module.css';
 
 const initDelay = 300;
 
-export function ProjectHeader({
-  title,
-  description,
-  linkLabel = 'Visit website',
-  url,
-  roles,
-  className,
-}) {
+export function ProjectHeader({ title, description, url, roles, className }) {
   return (
     <Section className={classes(styles.header, className)} as="section">
       <div
@@ -33,17 +27,6 @@ export function ProjectHeader({
           <Text className={styles.description} size="xl" as="p">
             {description}
           </Text>
-          {!!url && (
-            <Button
-              secondary
-              iconHoverShift
-              className={styles.linkButton}
-              icon="chevronRight"
-              href={url}
-            >
-              {linkLabel}
-            </Button>
-          )}
         </div>
         {!!roles?.length && (
           <ul className={styles.meta}>
@@ -128,9 +111,45 @@ export const ProjectBackground = ({ opacity = 0.7, className, ...rest }) => {
   );
 };
 
-export const ProjectImage = ({ className, alt, ...rest }) => (
+export const ProjectImage = ({
+  className,
+  alt,
+  text,
+  linktwt,
+  linkdc,
+  usernametwt,
+  usernamedc,
+  ...rest
+}) => (
   <div className={classes(styles.image, className)}>
     <Image reveal alt={alt} delay={300} {...rest} />
+    {text && (
+      <Text className={styles.imageText} size="m" as="p">
+        {text}
+      </Text>
+    )}
+    <div className={styles.iconsContainer}>
+      {linktwt && (
+        <a href={linktwt} target="_blank" rel="noopener noreferrer">
+          <Icon icon="twitter" />
+        </a>
+      )}
+      {linkdc && (
+        <a href={linkdc} target="_blank" rel="noopener noreferrer">
+          <Icon icon="discord" />
+        </a>
+      )}
+    </div>
+    {/* {linktwt && (
+      <a href={linktwt} target="_blank" rel="noopener noreferrer">
+        <Icon icon="twitter" />
+      </a>
+    )}
+    {linkdc && (
+      <a href={linkdc} target="_blank" rel="noopener noreferrer">
+        <Icon icon="discord" />
+      </a>
+    )} */}
   </div>
 );
 

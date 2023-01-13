@@ -36,9 +36,8 @@ export const icons = {
   discord: discord,
 };
 
-export const Icon = ({ icon, className, ...rest }) => {
+export const Icon = ({ icon, className, username, ...rest }) => {
   const IconComponent = icons[icon];
-
   return (
     <IconComponent aria-hidden className={classes(styles.icon, className)} {...rest} />
   );

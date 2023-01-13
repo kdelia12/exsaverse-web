@@ -68,9 +68,6 @@ export function Intro({ id, sectionRef, disciplines, scrollIndicatorHidden, ...r
                 <DecoderText text="Exsaverse" delay={300} />
               </h1>
               <Heading level={0} as="h2" className={styles.title}>
-                <VisuallyHidden className={styles.label}>
-                  {`Community  ${introLabel}`}
-                </VisuallyHidden>
                 <span aria-hidden className={styles.row}>
                   <span
                     className={styles.word}
