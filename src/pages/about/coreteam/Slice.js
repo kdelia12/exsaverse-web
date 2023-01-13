@@ -108,7 +108,7 @@ export const Slice = () => {
             sizes={`(max-width: ${media.mobile}px) 200px, 343px`}
             grid="4 / 5"
             text="Megamin - Core Team"
-            linktwt=""
+            linktwt="https://twitter.com/megamin666"
             usernametwt=""
             linkdc="https://discord.com/users/536201144347787264"
             usernamedc=""
