@@ -158,9 +158,9 @@ export const Home = () => {
         visible={visibleSections.includes(projectThree.current)}
         index={4}
         title="Experienced Alpha Hunters"
-        description="Core team will always be there to help you! We will make sure you will get the best service from us!"
+        description="We have experienced alpha hunters that will help you to find the best alpha project to invest!"
         buttonText="View more"
-        buttonLink="/about/coreteam"
+        buttonLink="/about/alpha"
         model={{
           type: 'laptop',
           alt: 'Annotating a biomedical image in the Slice app',

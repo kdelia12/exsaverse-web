@@ -56,14 +56,15 @@
 }
 
 .navLink {
-  padding: var(--spaceM);
+  padding: var(--spaceL);
+  padding-bottom: 16px; /* Adjust the value to move the line down */
   color: rgb(var(--rgbText) / 0.8);
   font-weight: var(--fontWeightMedium);
   font-size: var(--headerNavFontSize);
   text-decoration: none;
   position: relative;
   transition: color var(--durationS) ease 0.1s;
-  line-height: 1;
+  line-height: 0;
   display: inline-flex;
   align-items: center;
 
@@ -77,8 +78,10 @@
   &::after {
     content: '';
     position: absolute;
-    right: var(--spaceS);
-    left: var(--spaceS);
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
     height: 4px;
     background: rgb(var(--rgbAccent));
     transform: scaleX(0);
@@ -180,7 +183,7 @@
   text-align: center;
   text-decoration: none;
   color: var(--colorTextBody);
-  padding: var(--spaceL);
+  padding: var(--spaceXL);
   opacity: 0;
   transition-property: opacity;
   transition-duration: var(--durationS);
@@ -211,7 +214,7 @@
     height: 4px;
     background: rgb(var(--rgbAccent));
     transform: scaleX(0) translateY(-1px);
-    transform-origin: right;
+    transform-origin: left;
   }
 
   @media (--mediaUseMotion) {

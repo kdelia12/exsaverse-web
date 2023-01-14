@@ -28,6 +28,7 @@ import {
   ProjectImage,
   ProjectSection,
   ProjectSectionColumns,
+  ProjectSectionColumns3,
   ProjectSectionContent,
   ProjectSectionHeading,
   ProjectSectionText,
@@ -52,7 +53,7 @@ export const Slice = () => {
           opacity={0.8}
         />
         <ProjectHeader title={title} description={description} />
-        <ProjectSectionColumns className={styles.columns}>
+        <ProjectSectionColumns3 className={styles.columns}>
           <ProjectImage
             srcSet={[ijal, ijallarge]}
             placeholder={sliceAppPlaceholder}
@@ -89,6 +90,8 @@ export const Slice = () => {
             linkdc="https://discord.com/users/1063353910040985671"
             usernamedc=""
           />
+        </ProjectSectionColumns3>
+        <ProjectSectionColumns className={styles.columns}>
           <ProjectImage
             srcSet={[eve, evelarge]}
             placeholder={sliceAppPlaceholder}

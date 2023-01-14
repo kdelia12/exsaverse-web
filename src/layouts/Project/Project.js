@@ -124,7 +124,7 @@ export const ProjectImage = ({
   <div className={classes(styles.image, className)}>
     <Image reveal alt={alt} delay={300} {...rest} />
     {text && (
-      <Text className={styles.imageText} size="m" as="p">
+      <Text size="m" as="p" align='center' >
         {text}
       </Text>
     )}
@@ -200,6 +200,13 @@ export const ProjectTextRow = ({
 export const ProjectSectionColumns = ({ className, centered, ...rest }) => (
   <ProjectSectionContent
     className={classes(styles.sectionColumns, className)}
+    data-centered={centered}
+    {...rest}
+  />
+);
+export const ProjectSectionColumns3 = ({ className, centered, ...rest }) => (
+  <ProjectSectionContent
+    className={classes(styles.sectionColumns3, className)}
     data-centered={centered}
     {...rest}
   />

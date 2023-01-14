@@ -1,9 +1,6 @@
 import profileKatakana from 'assets/katakana-profile.svg?url';
 import profileImgLarge from 'assets/profile-large.jpg';
 import profileImgPlaceholder from 'assets/profile-placeholder.jpg';
-import profileImg from 'assets/profile.jpg';
-import profileImg2 from 'assets/profile2.jpg';
-import profileImg3 from 'assets/profile3.jpg';
 import { Button } from 'components/Button';
 import { DecoderText } from 'components/DecoderText';
 import { Divider } from 'components/Divider';
@@ -23,6 +20,10 @@ import styles from './Profile.module.css';
 import { Icon } from 'components/Icon';
 import { cssProps } from 'utils/style';
 import { useInterval, usePrevious } from 'hooks';
+import testi1 from 'assets/testi1.png';
+import testi2 from 'assets/testi2.png';
+import testi3 from 'assets/testi3.png';
+import testi4 from 'assets/testi4.png';
 
 const ProfileText = ({ visible, titleId }) => (
   <Fragment>
@@ -46,7 +47,7 @@ const ProfileText = ({ visible, titleId }) => (
 
 export const Profile = ({ id, visible, sectionRef }) => {
   const theme = useTheme();
-  const ProfileImage = [profileImg, profileImg2, profileImg3];
+  const ProfileImage = [testi1, testi2, testi3, testi4];
   const pictext = ['Profile 1', 'Profile 2', 'Profile 3'];
   const [currentIndex, setCurrentIndex] = useState(0);
   const prevTheme = usePrevious(theme);
@@ -134,7 +135,7 @@ export const Profile = ({ id, visible, sectionRef }) => {
                   collapseDelay={1000}
                 />
                 <div className={styles.tagText} data-visible={visible}>
-                  Our Partnership
+                  Testimonial
                 </div>
               </div>
               <div className={styles.image}>
@@ -158,52 +159,6 @@ export const Profile = ({ id, visible, sectionRef }) => {
                           src={item}
                           alt="Profile"
                         />
-                      )}
-                    </Transition>
-                  ))}
-                </AnimatePresence>
-              </div>
-              <div className={styles.row} component="span">
-                <AnimatePresence>
-                  {pictext.map(item => (
-                    <Transition
-                      unmount
-                      in={item === currentprofiletext}
-                      timeout={{ enter: 3000, exit: 2000 }}
-                      key={item}
-                    >
-                      {(visible, status) => (
-                        <span
-                          aria-hidden
-                          className={styles.word}
-                          data-plus={true}
-                          data-status={status}
-                          style={cssProps({ delay: tokens.base.durationL })}
-                        >
-                          {item}
-                          {/* {currentsociallink(({ label, url, icon }) => (
-                            <Transition
-                              unmount
-                              in={item === currentsociallink}
-                              timeout={{ enter: 3000, exit: 2000 }}
-                              key={item}
-                            >
-                              {(visible, status) => (
-                                <a
-                                  key={label}
-                                  data-navbar-item={desktop || undefined}
-                                  className={styles.navIconLink}
-                                  aria-label={label}
-                                  href={url}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                >
-                                  <Icon className={styles.navIcon} icon={icon} />
-                                </a>
-                              )}
-                            </Transition>
-                          ))} */}
-                        </span>
                       )}
                     </Transition>
                   ))}

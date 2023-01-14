@@ -355,14 +355,14 @@
 
 .textRow {
   align-self: center;
-  text-align: left;
+  text-align: center;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 
   @media (--mediaMobile) {
-    text-align: left;
+    text-align: center;
     align-items: flex-start;
   }
 
@@ -411,12 +411,21 @@
 
 .sectionColumns {
   display: grid;
-  grid-template-columns: repeat(
-    4,
-    1fr
-  ); /* 4 columns, each taking up 1 fraction of the available space */
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: var(--space3XL);
   margin: 0;
+
+  @media (--mediaTablet) {
+    grid-template-columns: 2fr;
+  }
+}
+.sectionColumns3 {
+  display: grid;
+  grid-template-columns: repeat(3, 0.27fr);
+  gap: var(--space3XL);
+  margin: 0;
+  justify-content: center;
+  align-content: center;
 
   @media (--mediaTablet) {
     grid-template-columns: 2fr;
