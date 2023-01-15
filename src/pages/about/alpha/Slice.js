@@ -2,7 +2,7 @@ import sliceAppLarge from 'assets/team.jpg';
 import sliceAppPlaceholder from 'assets/profile-placeholder.jpg';
 import sliceApp from 'assets/team.jpg';
 import sliceBackgroundLarge from 'assets/slice-background-large.jpg';
-import sliceBackgroundPlaceholder from 'assets/slice-background-placeholder.jpg';
+import sliceBackgroundPlaceholder from 'assets/slice-background-placeholder.png';
 import sliceBackground from 'assets/slice-background.jpg';
 import solsensei from 'assets/solsensei.png';
 import solsenseilarge from 'assets/solsensei.png';
@@ -114,7 +114,7 @@ export const Slice = () => {
             alt="Multiple user annotations on a shared layer."
             sizes={`(max-width: ${media.mobile}px) 200px, 343px`}
             grid="4 / 5"
-            text=" Shiver"
+            text=" ShVrn"
             linktwt=""
             usernametwt=""
             linkdc=""
