@@ -115,8 +115,8 @@ export const Home = () => {
         index={2}
         title="Whitelist Marketplace"
         description="We use bot for whitelist transaction so everyone will feel safe and just wait until the middleman handle your orders! Funfact, this bot also auto list your listing! psst, we are the first to implement it! "
-        buttonText="Check this out!"
-        buttonLink="https://discord.gg/exsaverse"
+        buttonText="Read More!"
+        buttonLink="articles/whitelist-marketplace/"
         model={{
           type: 'phone',
           alt: 'App login screen',
