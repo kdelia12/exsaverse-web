@@ -2,7 +2,7 @@ import sliceAppLarge from 'assets/team.jpg';
 import sliceAppPlaceholder from 'assets/profile-placeholder.png';
 import sliceApp from 'assets/team.jpg';
 import sliceBackgroundLarge from 'assets/slice-background-large.jpg';
-import sliceBackgroundPlaceholder from 'assets/slice-background-placeholder.png';
+import sliceBackgroundPlaceholder from 'assets/slice-background-placeholder.jpg';
 import sliceBackground from 'assets/slice-background.jpg';
 import dika from 'assets/dika.jpg';
 import dikalarge from 'assets/dika.jpg';
