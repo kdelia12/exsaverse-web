@@ -1,5 +1,5 @@
 import sliceAppLarge from 'assets/team.jpg';
-import sliceAppPlaceholder from 'assets/profile-placeholder.jpg';
+import sliceAppPlaceholder from 'assets/profile-placeholder.png';
 import sliceApp from 'assets/team.jpg';
 import sliceBackgroundLarge from 'assets/slice-background-large.jpg';
 import sliceBackgroundPlaceholder from 'assets/slice-background-placeholder.png';
