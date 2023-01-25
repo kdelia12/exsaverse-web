@@ -1,11 +1,11 @@
 {
-  "short_name": "Hamish Williams",
-  "name": "Design Portfolio of Hamish Williams",
+  "short_name": "exsaverse",
+  "name": "Exsaverse Whitelist Martketplace",
   "icons": [
     {
       "src": "favicon.ico",
       "sizes": "64x64",
-      "type": "image/png"
+      "type": "image/x-icon"
     },
     {
       "src": "icon-256.png",
