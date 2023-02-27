@@ -77,9 +77,8 @@ export const Home = () => {
   return (
     <div className={styles.home}>
       <Meta
-        title="Community Build on Solana"
-        description="At exsaverse, we believe in building a strong and inclusive community where everyone
-      can contribute their unique skills and knowledge."
+        title="Whitelist Marketplace"
+        description="At exsaverse, we provide a safe and trusted marketplace for whitelist transaction. We also provide a community for everyone to hang out and have fun!"
       />
       <Intro
         id="intro"
