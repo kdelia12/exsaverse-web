@@ -31,16 +31,14 @@ const ProfileText = ({ visible, titleId }) => (
       <DecoderText text="Hi there" start={visible} delay={500} />
     </Heading>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-      exsaverse is a community of individuals who are passionate about the development,
-      adoption, and use of cryptocurrency and decentralized finance platforms and
-      technologies. Our focus is on the various aspects of DeFi such as yield farming,
-      lending, borrowing, and insurance.
+      exsaverse is safe marketplace for buying and selling any whitelist. We always put
+      transparency and security first. We are a community of NFT collectors, artists, and
+      developers who are passionate about the NFT space.
     </Text>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-      At exsaverse, we believe in building a strong and inclusive community where everyone
-      can contribute their unique skills and knowledge. Whether you're a beginner or an
-      experienced professional, you're welcome to join us on our journey towards a
-      decentralized financial future.
+      At exsaverse, after being a customer, you can join the dao, which is have so many
+      benefits and fun. We often provide some whitelist spot, in fcfs or a raffle for the
+      community. We also have a giveaway for the community. Lets have fun
     </Text>
   </Fragment>
 );

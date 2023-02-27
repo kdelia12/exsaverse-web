@@ -2,6 +2,15 @@
   margin: 20px 0 60px;
 }
 
+/* Add margin for mobile devices */
+@media (--mediaTablet) {
+  .columns {
+    max-width: 1200px; /* set the maximum width of the columns */
+    margin: 0 auto; /* center the columns horizontally */
+    padding: 0 50px; /* add padding to the left and right of the columns */
+  }
+}
+
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
